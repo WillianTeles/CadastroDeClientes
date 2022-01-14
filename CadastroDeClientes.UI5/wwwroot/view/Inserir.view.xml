@@ -1,0 +1,49 @@
+<core:View controllerName="invent.clientes.controller.Inserir"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page title="Cadastro de Clientes" showNavButton="true" navButtonPress=".onNavBack">
+		<VBox class="sapUiSmallMargin">
+			<f:Form id="FormChange480_12120" editable="true">
+
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+				</f:layout>
+				<f:FormContainer title="Cadastro do Cliente">
+					<f:formElements>
+						<f:FormElement label="Nome">
+							<f:fields>
+								<Input type="text" id ="nome" placeholder="Digite o nome" value="{cliente>/nome}" required="true"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="CPF">
+							<f:fields>
+								<MaskInput id ="cPF" mask="999.999.999-99" placeholderSymbol="_" placeholder="Digite o CPF" value="{cliente>/cpf}" required="true" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Data de Nascimento">
+							<f:fields>
+								<Input type="Date" id="dataNascimento" placeholder="Digite a Data de Nascimento" value="{cliente>/dataNascimento}" required="true"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Telefone">
+							<f:fields>
+								<MaskInput id ="telefone" mask="(99)99999-9999" placeholderSymbol="_" placeholder="Digite o Telefone" value="{cliente>/telefone}" required="true" />
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+
+			</f:Form>
+		</VBox>
+
+		<l:Grid  class="sapUiSmallMargin">
+			<Button text="Salvar" class="sapUiSmallMarginBottom" press=".salvarNoBancoDeDados" width="180px" type="Emphasized" icon="sap-icon://save" ariaHasPopup="Dialog" />
+			<Button text="Cancelar" class="sapUiSmallMarginBottom"  press=".onNavBack" width="180px"  type="Reject" icon="sap-icon://sys-cancel" visible="true" />
+		</l:Grid>
+
+		<BusyDialog id="BusyDialog" />
+	</Page>
+</core:View>

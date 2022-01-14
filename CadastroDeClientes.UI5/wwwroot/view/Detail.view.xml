@@ -1,0 +1,51 @@
+<mvc:View
+		controllerName="invent.clientes.controller.Detail"
+		xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.core" xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" height="100%">
+    <Page showNavButton="true" navButtonPress=".onNavBack" enableScrolling="true" title="Detalhe do Cliente" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer">
+        
+        <headerContent>
+            <Button icon="sap-icon://delete" 
+			type="Reject" 
+            text="Deletar Cliente"
+			tooltip="Naveg"
+            press="deletarCliente"
+            ariaHasPopup="Dialog" />
+
+			<Button icon="sap-icon://edit"
+			type="Emphasized"
+            text="Editar Cliente"
+			tooltip="Naveg"
+            press="navegarParaEditar" />
+		
+		
+		</headerContent>
+        <content>
+            <VBox fitContainer="true">
+                <f:SimpleForm  id="SimpleFormDisplay480" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"  labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+                    <f:content>
+                        <c:Title text="Dados do Cliente" />
+						
+                        <Label text="Nome" />
+                        <Text text="{cliente>/nome}" />
+						
+                        <Label text="CPF" />
+                        <Text text="{cliente>/cpf}" />
+						
+						<Label text="Data de Nascimento" />
+						<Text text="{path: 'cliente>/dataNascimento', type: 'sap.ui.model.type.DateTime', formatOptions: {source: {pattern: 'yyyy-MM-ddTHH:mm:ss'}, pattern: 'dd/MM/yyyy'}}"/>
+
+						<Label text="Telefone" />
+                        <Text text="{cliente>/telefone}" />
+						
+                    </f:content>
+                    <f:layoutData>
+                        <FlexItemData shrinkFactor="0" backgroundDesign="Solid" styleClass="sapContrastPlus" />
+                    </f:layoutData>
+                </f:SimpleForm>
+            </VBox>
+        </content>
+        <BusyDialog id="BusyDialog" />
+    </Page>
+    
+    
+</mvc:View>

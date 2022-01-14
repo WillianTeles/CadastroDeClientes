@@ -1,0 +1,34 @@
+<mvc:View
+		controllerName="invent.clientes.controller.App"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc"
+		displayBlock="true"
+   xmlns:tnt="sap.tnt">
+  <tnt:ToolPage id="app">
+    <tnt:header>
+      <tnt:ToolHeader>
+        <ToolbarSpacer/>
+        <Title
+          text="Cadastro de Cientes"
+          level="H2"/>
+        <ToolbarSpacer/>
+      </tnt:ToolHeader>
+    </tnt:header>
+    <tnt:sideContent>
+      <tnt:SideNavigation
+        expanded="true"
+        itemSelect="onItemSelect">
+        <tnt:NavigationList>
+          <tnt:NavigationListItem
+            text="Menu Principal"
+            icon="sap-icon://home">
+            <tnt:NavigationListItem text="Lista de Clientes" key="listaName" />
+          </tnt:NavigationListItem>
+        </tnt:NavigationList>
+      </tnt:SideNavigation>
+    </tnt:sideContent>
+    <tnt:mainContents>
+      <App id="mainContents" />
+    </tnt:mainContents>
+  </tnt:ToolPage>
+</mvc:View>
