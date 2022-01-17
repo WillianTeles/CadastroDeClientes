@@ -1,7 +1,7 @@
 # CadastroDeClientes
 
 CRUD criado para Cadastro de Clientes, utilizando as seguintes ferramentas:
-- IDE: Visual Studio e Visual Studio Code.
+- IDE: Visual Studio.
 - Back-end: C#.
 - Front-end: Opções de Windows Form, .NET Framework e SAPUI5.
 - Banco de Dados: Microsoft SQL Server.
